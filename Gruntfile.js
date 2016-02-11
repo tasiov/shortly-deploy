@@ -3,6 +3,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
+      // dist: {
+      //   src: [],
+      //   dest:
+      // }
     },
 
     mochaTest: {
@@ -53,7 +57,7 @@ module.exports = function(grunt) {
       prodServer: {
         command: 'git push live master'
       }
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -86,7 +90,7 @@ module.exports = function(grunt) {
     grunt.task.run([ 'server-dev' ]);
   });
 
-  ////////////////////////////////////////////////////
+  //////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
 
@@ -108,6 +112,7 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', [
     //change
 
+    grunt.task.run([ 'shell' ])
   ]);
 
 
