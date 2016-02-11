@@ -3,10 +3,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-      // dist: {
-      //   src: [],
-      //   dest:
-      // }
+      dist: {
+        src: 'public/**/**.js',
+        dest: 'public/dist/compiled.min.js'
+      }
     },
 
     mochaTest: {
@@ -25,11 +25,17 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      myTarget: {
+        files: {
+          'public/dist/compiled.min.js': ['public/dist/compiled.min.js']
+        }
+      }
     },
 
     eslint: {
       target: [
-        // Add list of files to lint here
+        'app/*',
+        'public/client/*'
       ]
     },
 
@@ -110,9 +116,11 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
-    //change
+    if (grunt.option('prod') {
 
-    grunt.task.run([ 'shell' ])
+    } else {
+
+    }
   ]);
 
 

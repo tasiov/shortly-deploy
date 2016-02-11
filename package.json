@@ -32,6 +32,7 @@
     "sqlite3": "~3.0.10"
   },
   "devDependencies": {
+    "eslint-json": "^1.0.0",
     "supertest": "^0.10.0"
   }
 }
